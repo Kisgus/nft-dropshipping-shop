@@ -62,6 +62,14 @@ monitoring() {
     echo "mongo nft-dropshipping --eval 'db.stats()'  # Database status"
 }
 
+# NEARWEEK Intelligence Integration
+nearweek_integration() {
+    echo "NEARWEEK Intelligence Integration:"
+    echo "curl -o integration-script.sh https://gist.githubusercontent.com/Kisgus/fed8bcee6139928f3dd7a5a3df68cd7e/raw/nearweek-intelligence-integration.sh"
+    echo "chmod +x integration-script.sh"
+    echo "./integration-script.sh       # Execute NEARWEEK intelligence platform setup"
+}
+
 # Maintenance commands
 maintenance() {
     echo "Maintenance Commands:"
@@ -87,6 +95,8 @@ show_all() {
     echo ""
     monitoring
     echo ""
+    nearweek_integration
+    echo ""
     maintenance
     echo ""
 }
@@ -110,6 +120,9 @@ case "${1:-all}" in
         ;;
     monitor)
         monitoring
+        ;;
+    nearweek|intelligence)
+        nearweek_integration
         ;;
     maintenance)
         maintenance
